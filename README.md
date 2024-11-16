@@ -1,5 +1,85 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+
+Proyecto: Sistema de Tipo de Cambio - Backend
+
+
+______________________________________________________________________
+Descripción
+Este es el backend del Sistema de Tipo de Cambio, desarrollado con Spring Boot. Proporciona una API para consultar el tipo de cambio actual y su historial.
+
+Tecnologías Utilizadas
+Framework: Spring Boot
+Base de Datos: MySQL
+Conexión a SOAP: Servicio SOAP de Banguat para obtener el tipo de cambio.
+
+
+
+
+___________________________________________________________________________
+Requisitos Previos
+Java 17: Versión recomendada.
+Maven: Administrador de dependencias.
+MySQL: Para la base de datos.
+Instalación y Configuración
+Clona el repositorio:
+
+bash
+Copiar código
+git clone <URL_DEL_REPOSITORIO>
+cd backend
+Configura la base de datos:
+
+Crea una base de datos en MySQL con el nombre tipo_cambio.
+Actualiza src/main/resources/application.properties con tus credenciales:
+properties
+Copiar código
+spring.datasource.url=jdbc:mysql://localhost:3306/tipo_cambio
+spring.datasource.username=TU_USUARIO
+spring.datasource.password=TU_CONTRASEÑA
+Compila e instala las dependencias:
+
+bash
+Copiar código
+mvn clean install
+Inicia la aplicación:
+
+bash
+Copiar código
+mvn spring-boot:run
+Accede a las APIs en http://localhost:8080.
+
+Endpoints Principales
+Obtener Tipo de Cambio Actual:
+
+Método: GET
+Ruta: /api/tipo-cambio/actual
+Respuesta:
+json
+Copiar código
+{
+  "fecha": "2024-11-16",
+  "tipoCambio": 7.85
+}
+Obtener Historial de Tipos de Cambio:
+
+Método: GET
+Ruta: /api/tipo-cambio/historial
+Respuesta:
+json
+Copiar código
+[
+  { "fecha": "2024-11-15", "tipoCambio": 7.84 },
+  { "fecha": "2024-11-14", "tipoCambio": 7.83 }
+]
+
+
+
+
+
+
+___________________________________________________________________________-
+
 ## Getting Started
 
 First, run the development server:
